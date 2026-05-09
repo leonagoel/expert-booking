@@ -1,8 +1,24 @@
 <div align="center">
 
-<picture>
-  <img src="https://readme-typing-svg.demolab.com?font=Syne&weight=800&size=52&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=700&height=80&lines=ExpertConnect+%E2%9A%A1;Book.+Connect.+Grow.;Real-Time+Booking+Platform." alt="ExpertConnect" />
-</picture>
+<div align="center">
+
+<svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+  </defs>
+  <text x="300" y="72" font-family="Arial Black, sans-serif" font-size="54" font-weight="900"
+    fill="url(#tg)" text-anchor="middle" letter-spacing="-1">
+    ⚡ ExpertConnect
+  </text>
+  <text x="300" y="105" font-family="Arial, sans-serif" font-size="15"
+    fill="#94a3b8" text-anchor="middle" letter-spacing="3">
+    REAL-TIME EXPERT BOOKING PLATFORM
+  </text>
+</svg>
 
 <br/>
 
