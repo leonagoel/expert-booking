@@ -1,0 +1,139 @@
+.expert-card {
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease forwards;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.expert-card:hover .book-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expert-card:hover .expert-avatar {
+  transform: scale(1.05);
+}
+
+.expert-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+}
+
+.expert-avatar-wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.expert-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.expert-card:hover .avatar-glow { opacity: 1; }
+
+.expert-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.expert-rate {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.expert-rate span {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.expert-card-body {
+  padding: 16px 20px;
+  flex: 1;
+}
+
+.expert-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.expert-specialization {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.expert-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-icon {
+  color: var(--accent-light);
+  font-size: 12px;
+}
+
+.stat-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.expert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.expert-card-footer {
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.book-btn {
+  width: 100%;
+  justify-content: center;
+  opacity: 0.85;
+  transition: var(--transition);
+}
+
+.expert-card:hover .book-btn {
+  opacity: 1;
+}

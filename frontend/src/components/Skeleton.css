@@ -1,0 +1,44 @@
+.expert-card-skeleton {
+  padding: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.skeleton-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+}
+
+.skeleton-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.skeleton-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.skeleton-badge { width: 70px; height: 22px; border-radius: 100px; }
+.skeleton-rate { width: 60px; height: 24px; border-radius: 4px; }
+
+.skeleton-body {
+  padding: 16px 20px;
+}
+
+.skeleton-name { width: 60%; height: 22px; border-radius: 4px; margin-bottom: 8px; }
+.skeleton-spec { width: 80%; height: 16px; border-radius: 4px; margin-bottom: 14px; }
+.skeleton-stats { width: 100%; height: 18px; border-radius: 4px; margin-bottom: 14px; }
+.skeleton-tags { display: flex; gap: 6px; }
+.skeleton-tag { width: 60px; height: 22px; border-radius: 100px; }
+
+.skeleton-footer {
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.skeleton-btn { width: 100%; height: 42px; border-radius: var(--radius-md); }
