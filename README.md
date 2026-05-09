@@ -1,73 +1,52 @@
 <div align="center">
 
-<div align="center">
-
-<svg width="600" height="120" viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#6366f1"/>
-      <stop offset="50%" style="stop-color:#a855f7"/>
-      <stop offset="100%" style="stop-color:#ec4899"/>
-    </linearGradient>
-  </defs>
-  <text x="300" y="72" font-family="Arial Black, sans-serif" font-size="54" font-weight="900"
-    fill="url(#tg)" text-anchor="middle" letter-spacing="-1">
-    ⚡ ExpertConnect
-  </text>
-  <text x="300" y="105" font-family="Arial, sans-serif" font-size="15"
-    fill="#94a3b8" text-anchor="middle" letter-spacing="3">
-    REAL-TIME EXPERT BOOKING PLATFORM
-  </text>
-</svg>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=6366f1&height=200&section=header&text=ExpertConnect&fontSize=80&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Real-Time%20Expert%20Session%20Booking%20Platform&descAlignY=60&descAlign=50&descSize=18" width="100%"/>
 
 <br/>
 
-```
-  ╔══════════════════════════════════════════════════════╗
-  ║   Discover experts  →  Pick a slot  →  Book instantly ║
-  ║          with zero double-bookings. Ever.             ║
-  ╚══════════════════════════════════════════════════════╝
-```
+<a href="#"><img src="https://readme-typing-svg.demolab.com?font=Syne&weight=700&size=22&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Discover+World-Class+Experts;Book+Sessions+in+Real-Time;Zero+Double-Bookings.+Ever.;Live+Slot+Updates+via+Socket.io" alt="Typing SVG" /></a>
+
+<br/><br/>
+
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
+[![Socket.io](https://img.shields.io/badge/Socket.io-Real--Time-010101?style=for-the-badge&logo=socket.io)](https://socket.io)
+[![Express](https://img.shields.io/badge/Express-4-000000?style=for-the-badge&logo=express)](https://expressjs.com)
 
 <br/>
 
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com)
-[![Socket.io](https://img.shields.io/badge/Socket.io-Real--Time-010101?style=flat-square&logo=socket.io)](https://socket.io)
-[![Express](https://img.shields.io/badge/Express-4-000000?style=flat-square&logo=express)](https://expressjs.com)
+> **⚡ Live slots · 🔒 Race-condition proof · 🎨 Premium dark UI · 📡 WebSocket powered**
 
 <br/>
-
-> ⚡ **Live slots.** 🔒 **Race-condition proof.** 🎨 **Premium dark UI.**
 
 </div>
 
 ---
 
-## What Is This?
+## 🚀 What Is This?
 
-**ExpertConnect** is a production-grade, full-stack booking platform that lets users discover experts across categories — Technology, Finance, Design, Health, Legal, Marketing — and book 1-on-1 sessions with real-time slot availability.
+**ExpertConnect** is a production-grade, full-stack booking platform that lets users discover experts across **Technology, Finance, Design, Health, Legal, and Marketing** — and book 1-on-1 sessions with real-time slot availability.
 
-The system is built around one hard problem: **preventing double-bookings under concurrent load** — solved using MongoDB atomic transactions with array filters and Socket.io for live UI sync across all connected clients.
+Built around one hard engineering problem: **preventing double-bookings under concurrent load** — solved using MongoDB atomic `findOneAndUpdate` with array filters and Socket.io for live UI sync across all connected clients.
 
 ---
 
-## Feature Highlights
+## ✨ Feature Highlights
 
 | Area | What's Built |
 |------|-------------|
 | 🔍 **Expert Discovery** | Search by name/tag, filter by category, sort by rating/experience/rate, paginated results |
 | 📅 **Slot Selection** | Date-grouped availability grid, live slot counts, instant visual feedback |
 | ⚡ **Real-Time Sync** | Socket.io rooms per expert — slots update across all browsers without refresh |
-| 🔒 **Race Condition Lock** | Atomic MongoDB `findOneAndUpdate` inside a session transaction prevents any double-booking |
+| 🔒 **Race Condition Lock** | Atomic MongoDB `findOneAndUpdate` prevents any double-booking |
 | 📋 **Booking Management** | Email-based lookup, status transitions (Pending → Confirmed → Completed → Cancelled) |
-| ✅ **Confirmation Flow** | Animated success popup with booking reference on every confirmed session |
+| ✅ **Confirmation Flow** | Animated success screen with unique booking reference on every session |
 | 🎨 **Premium UI** | Dark theme, Syne + DM Sans typography, smooth page transitions, skeleton loaders |
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -88,22 +67,20 @@ The system is built around one hard problem: **preventing double-bookings under 
 └───────────┼─────────────────────────────────────────────┘
             │
 ┌───────────▼─────────────────────────────────────────────┐
-│                      MONGODB                            │
+│                      MONGODB ATLAS                      │
 │  Experts collection · Bookings collection               │
-│  Atomic transactions · Compound indexes                 │
+│  Atomic operations · Compound indexes                   │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## The Hard Part — Concurrency-Safe Booking
+## 🔒 The Hard Part — Concurrency-Safe Booking
 
-The most interesting engineering problem here: **two users clicking "Book" on the same slot at the same millisecond.**
-
-Standard read-then-write logic fails here. ExpertConnect solves it with a single atomic operation:
+Two users clicking "Book" on the same slot at the same millisecond. Standard read-then-write logic fails here. ExpertConnect solves it with a **single atomic operation**:
 
 ```js
-// One query: find the slot AND lock it — no separate read step
+// One query: find the slot AND lock it atomically — no separate read step
 const expert = await Expert.findOneAndUpdate(
   {
     _id: expertId,
@@ -111,38 +88,27 @@ const expert = await Expert.findOneAndUpdate(
       $elemMatch: { date, time, isBooked: false }  // only matches if still free
     }
   },
-  {
-    $set: { 'availableSlots.$[slot].isBooked': true }
-  },
+  { $set: { 'availableSlots.$[slot].isBooked': true } },
   {
     arrayFilters: [{ 'slot.date': date, 'slot.time': time, 'slot.isBooked': false }],
-    session,   // wrapped in a MongoDB transaction
     new: true,
   }
 );
 
 if (!expert) {
-  // Someone else got there first — return 409 Conflict
-  return res.status(409).json({ code: 'SLOT_UNAVAILABLE' });
+  return res.status(409).json({ code: 'SLOT_UNAVAILABLE' }); // Someone else got there first
 }
 
 // Safe to create the booking now
-await booking.save({ session });
-await session.commitTransaction();
-```
+await booking.save();
 
-MongoDB evaluates the filter and the update atomically. The `session` wraps both writes in a transaction so a crash mid-way leaves no orphaned state.
-
-After a successful booking, the server broadcasts to every client viewing that expert's page:
-
-```js
+// Broadcast to all clients viewing this expert
 io.to(`expert:${expertId}`).emit('slot:booked', { date, time });
-// → All connected clients grey out that slot instantly
 ```
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 expert-booking/
@@ -165,7 +131,7 @@ expert-booking/
 │
 └── frontend/
     └── src/
-        ├── components/           # Navbar, ExpertCard, Skeleton
+        ├── components/           # Navbar, Footer, ExpertCard, Skeleton
         ├── context/
         │   └── SocketContext.jsx # Global socket connection
         ├── pages/
@@ -179,7 +145,7 @@ expert-booking/
 
 ---
 
-## API Reference
+## 🔌 API Reference
 
 ### Experts
 
@@ -208,11 +174,11 @@ expert-booking/
 
 ---
 
-## Getting Started
+## ⚙️ Getting Started
 
 ### Prerequisites
 - Node.js v18+
-- MongoDB (local or [Atlas](https://mongodb.com/atlas) free tier)
+- MongoDB ([Atlas](https://mongodb.com/atlas) free tier recommended)
 
 ### 1 — Backend
 
@@ -239,7 +205,7 @@ npm start       # Runs on http://localhost:3000
 **`backend/.env`**
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/expert-booking
+MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/expert-booking
 CLIENT_URL=http://localhost:3000
 NODE_ENV=development
 ```
@@ -252,20 +218,7 @@ REACT_APP_SOCKET_URL=http://localhost:5000
 
 ---
 
-## Design Decisions Worth Noting
-
-**Why MongoDB transactions for bookings?**
-Multi-document operations (updating the expert's slot + creating the booking record) need to be atomic. If the server crashes between the two writes, the transaction rolls back and the slot is freed automatically.
-
-**Why Socket.io rooms instead of broadcasting globally?**
-Each expert page joins a room keyed by `expert:{id}`. Only clients viewing the same expert receive slot updates — no unnecessary traffic to unrelated pages.
-
-**Why email-based booking lookup instead of auth?**
-Keeps the UX frictionless for a booking tool. Users enter the email they booked with — no account creation, no password resets.
-
----
-
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -279,8 +232,23 @@ Keeps the UX frictionless for a booking tool. Users enter the email they booked 
 
 ---
 
+## 💡 Design Decisions
+
+**Why atomic operations instead of transactions?**
+MongoDB Atlas M0 (free tier) doesn't support multi-document transactions. The `findOneAndUpdate` with `$elemMatch` is fully atomic at the document level — it only matches and updates the slot if it's still free, making it race-condition proof without needing a transaction session.
+
+**Why Socket.io rooms instead of broadcasting globally?**
+Each expert page joins a room keyed by `expert:{id}`. Only clients viewing the same expert receive slot updates — no unnecessary traffic to unrelated pages.
+
+**Why email-based booking lookup instead of auth?**
+Keeps the UX frictionless for a booking tool. Users enter the email they booked with — no account creation, no password resets.
+
+---
+
 <div align="center">
 
-Built with React · Node.js · Express · MongoDB · Socket.io
+<img src="https://capsule-render.vercel.app/api?type=waving&color=6366f1&height=100&section=footer" width="100%"/>
+
+**Built with ❤️ using React · Node.js · Express · MongoDB · Socket.io**
 
 </div>
